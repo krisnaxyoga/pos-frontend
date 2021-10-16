@@ -8,7 +8,7 @@
             <div class="col-xl-4 col-lg-6 mx-auto">
               <div class="auth-form-light text-left p-5">
                 <div class="brand-logo">
-                  <img src="../../../assets/images/logo.svg">
+                  <img src="">
                 </div>
                 <h4>Hello! let's get started</h4>
                 <h6 class="font-weight-light">Sign in to continue.</h6>
@@ -32,11 +32,11 @@
                     </div>
                     <a href="javascript:void(0);" class="auth-link text-black">Forgot password?</a>
                   </div>
-                  <div class="mb-2">
+                  <!-- <div class="mb-2">
                     <button type="button" class="btn btn-block btn-facebook auth-form-btn">
                       <i class="mdi mdi-facebook mr-2"></i>Connect using facebook
                     </button>
-                  </div>
+                  </div> -->
                   <div class="text-center mt-4 font-weight-light">
                     Don't have an account? <router-link to="/auth-pages/register" class="text-primary">Create</router-link>
                   </div>

@@ -94,7 +94,13 @@ export default new Router({
           path: 'register',
           name: 'register',
           component: () => import('@/pages/samples/auth-pages/register')
+        },
+        {
+          path: 'regisowner',
+          name: 'regisowner',
+          component: () => import('../pages/samples/auth-pages/Regisowner.vue')
         }
+
       ]
     },
     {

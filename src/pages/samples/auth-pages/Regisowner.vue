@@ -10,30 +10,18 @@
                 <div class="brand-logo">
                   <img src="../../../assets/images/logo.svg">
                 </div>
-                <h4>Buat Akun Tokomu Disini</h4>
+                <h4>Buat Akunmu Disini</h4>
                 <h6 class="font-weight-light">Daftar dengan mudah. Hanya Perlu Melakukan Langkah Berikut</h6>
                 <form class="pt-3">
-                   <div class="form-group">
-                    <select class="form-control form-control-lg" id="exampleFormControlSelect2">
-                      <option>Kategori Toko</option>
-                      <option>United States of America</option>
-                     
-                    </select>
+                   
+                  <div class="form-group">
+                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Nama Owner">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Nama Toko">
+                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email Owner">
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email Toko">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Telepon Toko">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Website Toko">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Alamat Toko">
+                    <input type="text" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Telepon Owner">
                   </div>
                   <div class="mb-4">
                     <div class="form-check">
@@ -45,7 +33,7 @@
                     </div>
                   </div>
                   <div class="mt-3">
-                    <router-link class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" to="/auth-pages/regisowner">Daftar</router-link>
+                    <router-link class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" to="/dashboard">Daftar</router-link>
                   </div>
                   <div class="text-center mt-4 font-weight-light">
                     Sudah Punya Akun? <router-link to="/auth-pages/login" class="text-primary">Login</router-link>
@@ -65,6 +53,6 @@
 
 <script>
 export default {
-  name: 'register'
+  name: 'regisowner'
 }
 </script>
