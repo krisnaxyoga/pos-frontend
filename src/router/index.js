@@ -64,7 +64,7 @@ export default new Router({
         {
           path: 'chartjs',
           name: 'chartjs',
-          component: () => import('@/pages/charts/chartjs')
+          component: () => import('../pages/charts/chartjs.vue')
         },
       ]
     },
