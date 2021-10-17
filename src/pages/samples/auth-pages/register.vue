@@ -10,30 +10,33 @@
                 <div class="brand-logo">
                   <img src="../../../assets/images/logo.svg">
                 </div>
+                <div class="alert alert-danger" v-for="(error, index) in errors" :key="index">
+                  {{ error[0] }}
+                </div>
                 <h4>Buat Akun Tokomu Disini</h4>
                 <h6 class="font-weight-light">Daftar dengan mudah. Hanya Perlu Melakukan Langkah Berikut</h6>
-                <form class="pt-3">
+                <form class="pt-3" @submit.prevent="register">
                    <div class="form-group">
-                    <select class="form-control form-control-lg" id="exampleFormControlSelect2">
+                    <select v-model="kategori" class="form-control form-control-lg" id="exampleFormControlSelect2">
                       <option>Kategori Toko</option>
                       <option>United States of America</option>
                      
                     </select>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Nama Toko">
+                    <input v-model="nama_toko" type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Nama Toko">
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email Toko">
+                    <input v-model="email" type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email Toko">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Telepon Toko">
+                    <input v-model="telepon_toko" type="text" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Telepon Toko">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Website Toko">
+                    <input v-model="web_toko" type="text" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Website Toko">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Alamat Toko">
+                    <input v-model="alamat_toko" type="text" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Alamat Toko">
                   </div>
                   <div class="mb-4">
                     <div class="form-check">
@@ -64,7 +67,35 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-  name: 'register'
+  name: 'register',
+   data() {
+    return {
+      name: "",
+      email: "",
+      password: "",
+      errors: null
+    };
+  },
+  methods: {
+    register: function () {
+      let data = {
+        nama_toko: this.nama_toko,
+        email: this.email,
+        password: this.password,
+      };
+      this.$store
+        .dispatch("register", data)
+        .then(response => {
+          console.log(response)
+          this.$router.push({
+            name: 'Login'
+          })
+        }).catch(error => {
+          this.errors = error.response.data.errors
+        })
+    }
+  }
 }
 </script>

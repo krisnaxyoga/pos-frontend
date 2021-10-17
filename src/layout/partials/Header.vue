@@ -135,6 +135,10 @@
       <button class="navbar-toggler navbar-toggler-right align-self-center" type="button" @click="toggleMobileSidebar()">
         <span class="mdi mdi-menu"></span>
       </button>
+      <button class="navbar-toggler navbar-toggler-right align-self-center" type="button" @click="logout">
+        <span class="mdi mdi-menu"></span>
+      </button>
+      
     </div>
   </b-navbar>
 </template>
@@ -148,6 +152,11 @@ export default {
     },
     toggleMobileSidebar: () => {
       document.querySelector('#sidebar').classList.toggle('active');
+    },
+    logout: function() {
+      this.$store.dispatch("logout").then(() => {
+      this.$router.push("/");
+    });
     }
   }
 }

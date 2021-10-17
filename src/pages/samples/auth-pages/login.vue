@@ -10,17 +10,21 @@
                 <div class="brand-logo">
                   <img src="">
                 </div>
+                <div class="alert alert-danger" v-for="(error, index) in errors" :key="index">
+                  {{ error[0] }}
+                </div>
                 <h4>Hello! let's get started</h4>
                 <h6 class="font-weight-light">Sign in to continue.</h6>
-                <form class="pt-3">
+                <form class="pt-3" @submit.prevent="userLogin">
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
+                    <input type="email" v-model="form.email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" v-model='form.password' class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
                   </div>
                   <div class="mt-3">
-                    <router-link class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" to="/">SIGN IN</router-link>
+                    <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
+                    <!-- <router-link class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" to="/">SIGN IN</router-link> -->
                   </div>
                   <div class="my-2 d-flex justify-content-between align-items-center">
                     <div class="form-check">
@@ -55,6 +59,25 @@
 
 <script>
 export default {
-  name: 'login'
+  name: 'login',
+    data(){
+      return {
+        form: {
+          email: '',
+          password: '',
+        },
+        errors: null
+      }
+    },
+    methods: {
+      userLogin () { 
+      this.$store.dispatch('login', this.form)
+      .then(response => {
+  	this.$router.push({name: 'dashboard'})
+      }).catch(error => {
+        this.errors = error.response.data.errors
+      })
+    } 
+    }
 }
 </script>

@@ -16,6 +16,7 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
   import Header from "./partials/Header";
   import Sidebar from "./partials/Sidebar";
   import Footer from "./partials/Footer";
@@ -25,6 +26,12 @@
       Header,
       Sidebar,
       Footer
-    }
+    },
+    computed: {
+      ...mapGetters({ 
+        isLoggedIn: 'isLoggedIn',
+        user: 'user',
+      })
+    },
   }
 </script>
