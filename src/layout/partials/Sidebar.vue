@@ -30,33 +30,33 @@
           <b-collapse accordion="sidebar-accordion" id="ui-basic">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <router-link class="nav-link" to="/basic-ui/buttons/">Produk</router-link>
+                <router-link class="nav-link" to="/product/listproduct">Produk</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="/basic-ui/dropdowns/">Inventory</router-link>
+                <router-link class="nav-link" to="/error-pages/error-404">Inventory</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="/basic-ui/typography/">Cetak Barcode</router-link>
+                <router-link class="nav-link" to="/error-pages/error-404">Cetak Barcode</router-link>
               </li>
             </ul>
           </b-collapse>
         </li>
         <li class="nav-item" v-on:click="collapseAll">
-          <router-link class="nav-link" to="/dashboard">
+          <router-link class="nav-link" to="/error-pages/error-404">
             <span class="menu-title">Pelanggan & Supplier</span>
             <i class="mdi mdi mdi-account-multiple menu-icon"></i>
           </router-link>
         </li>
         <li class="nav-item" v-on:click="collapseAll">
-          <router-link class="nav-link" to="/dashboard">
+          <router-link class="nav-link" to="/error-pages/error-404">
             <span class="menu-title">Penjualan</span>
             <i class="mdi mdi mdi-cart-outline menu-icon"></i>
           </router-link>
         </li>
         <li class="nav-item" v-on:click="collapseAll">
-          <router-link class="nav-link" to="/dashboard">
+          <router-link class="nav-link" to="/error-pages/error-404">
             <span class="menu-title">Pembelian</span>
-            <i class="mdi mdi mdi-book menu-icon"></i>
+            <i class="fa fa-handshake-o menu-icon"></i>
           </router-link>
         </li>
         <li class="nav-item">
@@ -68,42 +68,42 @@
           <b-collapse accordion="sidebar-accordion" id="charts-dropdown">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <router-link class="nav-link" to="/charts/chartjs/">Transaksi</router-link>
+                <router-link class="nav-link" to="/error-pages/error-404">Transaksi</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="/charts/chartjs/">Tipe Transaksi</router-link>
+                <router-link class="nav-link" to="/error-pages/error-404">Tipe Transaksi</router-link>
               </li>
             </ul>
           </b-collapse>
         </li>
         <li class="nav-item" v-on:click="collapseAll">
-          <router-link class="nav-link" to="/dashboard">
+          <router-link class="nav-link" to="/error-pages/error-404">
             <span class="menu-title">Laporan</span>
-            <i class="mdi mdi mdi-book menu-icon"></i>
+            <i class="fa fa-calculator menu-icon"></i>
           </router-link>
         </li>
         <li class="nav-item">
           <span class="nav-link" v-b-toggle="'table-dropdown'">
             <span class="menu-title">Point Of Sale</span>
             <i class="menu-arrow"></i>
-            <i class="mdi mdi-table-large menu-icon"></i>
+            <i class="fa fa-fax menu-icon"></i>
           </span>
           <b-collapse accordion="sidebar-accordion" id="table-dropdown">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <router-link class="nav-link" to="/tables/basic-tables/">Pengaturan Pos</router-link>
+                <router-link class="nav-link" to="/error-pages/error-404">Pengaturan Pos</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="/tables/basic-tables/">Saldo Kas Harian</router-link>
+                <router-link class="nav-link" to="/error-pages/error-404">Saldo Kas Harian</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="/tables/basic-tables/">Ringkasan Shift</router-link>
+                <router-link class="nav-link" to="/error-pages/error-404">Ringkasan Shift</router-link>
               </li>
             </ul>
           </b-collapse>
         </li>
         <li class="nav-item" v-on:click="collapseAll">
-          <router-link class="nav-link" to="/dashboard">
+          <router-link class="nav-link" to="/error-pages/error-404">
             <span class="menu-title">Kehadiran</span>
             <i class="mdi mdi mdi-book menu-icon"></i>
           </router-link>
@@ -117,19 +117,19 @@
           <b-collapse accordion="sidebar-accordion" id="user-page-dropdown">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <router-link class="nav-link" target="_blank" to="">Toko</router-link>
+                <router-link class="nav-link" target="_blank" to="/error-pages/error-404">Toko</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" target="_blank" to="">Pajak & Biaya</router-link>
+                <router-link class="nav-link" target="_blank" to="/error-pages/error-404">Pajak & Biaya</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" target="_blank" to="">Notifikasi</router-link>
+                <router-link class="nav-link" target="_blank" to="/error-pages/error-404">Notifikasi</router-link>
               </li>
             </ul>
           </b-collapse>
         </li>
         <li class="nav-item" v-on:click="collapseAll">
-          <router-link class="nav-link" to="">
+          <router-link class="nav-link" to="/error-pages/error-404">
             <span class="menu-title">Tutorial</span>
             <i class="fa fa-question-circle menu-icon"></i>
           </router-link>

@@ -7,18 +7,14 @@
                 </div>
                 <div class="card">
                     <div class="card-header">
-                        Add Produk
+                        Add Kategori
                     </div>
                     <div class="card-body">
                         <form class="row" action="">
                             
                             <div class="col-12 col-lg-12 mb-3">
-                                <label for=""><span class="text-danger">*</span>  nama Produk</label>
+                                <label for=""><span class="text-danger">*</span>  nama Kategori</label>
                                 <input class="form-control" type="text" name="" id="" placeholder="masukan nama produk">
-                            </div>
-                            <div class="col-12 col-lg-12 mb-3">
-                                <label for=""><span class="text-danger">*</span> Grup</label>
-                                <input class="form-control" type="text" name="" id="" placeholder="grup">
                             </div>
                             <div class="col-12 col-lg-12 mb-3">
                                 <div class="custom-file">
@@ -41,6 +37,6 @@
 </template>
 <script>
 export default {
-    name: 'AddProduk',
+    name: 'AddKategori',
 }
 </script>

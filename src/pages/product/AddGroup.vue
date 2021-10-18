@@ -7,24 +7,23 @@
                 </div>
                 <div class="card">
                     <div class="card-header">
-                        Add Produk
+                        Add Group
                     </div>
                     <div class="card-body">
                         <form class="row" action="">
                             
                             <div class="col-12 col-lg-12 mb-3">
-                                <label for=""><span class="text-danger">*</span>  nama Produk</label>
+                                <label for=""><span class="text-danger">*</span>  nama Kategori</label>
                                 <input class="form-control" type="text" name="" id="" placeholder="masukan nama produk">
                             </div>
                             <div class="col-12 col-lg-12 mb-3">
-                                <label for=""><span class="text-danger">*</span> Grup</label>
-                                <input class="form-control" type="text" name="" id="" placeholder="grup">
-                            </div>
-                            <div class="col-12 col-lg-12 mb-3">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                </div>
+                                <label for=""><span class="text-danger">*</span>  Kategori</label>
+                                <select class="form-control" id="" name="">
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="fiat">Fiat</option>
+                                    <option value="audi">Audi</option>
+                                </select>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <button
@@ -41,6 +40,6 @@
 </template>
 <script>
 export default {
-    name: 'AddProduk',
+    name: 'AddGroup',
 }
 </script>

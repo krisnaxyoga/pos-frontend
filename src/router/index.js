@@ -37,6 +37,32 @@ export default new Router({
       ]
     },
     {
+      path: '/product',
+      component: layout,
+      children: [
+        {
+          path: 'listproduct',
+          name: 'listproduct',
+          component: () => import('@/pages/product/ListProduct')
+        },
+        {
+          path: 'addproduk',
+          name: 'AddProduk',
+          component: () => import('@/pages/product/AddProduct')
+        },
+        {
+          path: 'addkategori',
+          name: 'AddKategori',
+          component: () => import('@/pages/product/AddKategori')
+        },
+        {
+          path: 'addgroup',
+          name: 'AddGroup',
+          component: () => import('@/pages/product/AddGroup')
+        }
+      ]
+    },
+    {
       path: '/basic-ui',
       component: layout,
       children: [
