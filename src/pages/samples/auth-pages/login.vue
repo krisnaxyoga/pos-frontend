@@ -10,17 +10,26 @@
                 <div class="brand-logo">
                   <img src="">
                 </div>
+                <div v-if="loginFailed" class="alert alert-danger">
+                    Email atau Password Anda salah.
+                </div>
                 <h4>Hello! let's get started</h4>
                 <h6 class="font-weight-light">Sign in to continue.</h6>
-                <form class="pt-3">
+                <form class="pt-3" @submit.prevent="login">
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
+                    <input v-model="user.email" type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
                   </div>
+                  <div v-if="validation.email" class="mt-2 alert alert-danger">
+                                {{ validation.email[0] }}
+                            </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                    <input v-model="user.password" type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
                   </div>
+                  <div v-if="validation.password" class="mt-2 alert alert-danger">
+                                {{ validation.password[0] }}
+                            </div>
                   <div class="mt-3">
-                    <router-link class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" to="/">SIGN IN</router-link>
+                    <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
                   </div>
                   <div class="my-2 d-flex justify-content-between align-items-center">
                     <div class="form-check">
@@ -54,7 +63,72 @@
 </template>
 
 <script>
+import reactive from 'vue'
+import ref from 'vue'
+import useRouter from 'vue-router'
+import axios from 'axios'
 export default {
-  name: 'login'
+  name: 'login',
+  setup() {
+
+            //inisialisasi vue router on Composition API
+            const router = useRouter()
+
+            //state user
+            const user = reactive({
+                email: '',
+                password: '',
+            })
+
+            //state validation
+            const validation = ref([])
+
+            //state loginFailed
+            const loginFailed = ref(null)
+
+            //method login
+            function login() {
+
+                //define variable 
+                let email = user.email
+                let password = user.password
+
+                //send server with axios
+                axios.post('https://api.stargobali.com/api/login', {
+                        email,
+                        password,
+                })
+                .then(response => {
+
+                    if(response.data.success) {
+
+                        //set token
+                        localStorage.setItem('token', response.data.token)
+
+                        //redirect ke halaman dashboard
+                        return router.push({
+                            name: 'dashboard'
+                        })
+                    }
+
+                    //set state loggedIn to true
+                    loginFailed.value = true
+
+
+                }).catch(error => {
+                    //set validation dari error response
+                    validation.value = error.response.data
+                })
+
+            }
+
+            return {
+                user,           // <-- state user
+                validation,     // <-- state validation 
+                loginFailed,    // <-- state loggedIn
+                login           // <-- method login
+            }
+
+        }
 }
 </script>

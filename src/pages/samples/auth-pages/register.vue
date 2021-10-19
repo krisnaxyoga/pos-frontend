@@ -64,7 +64,65 @@
 </template>
 
 <script>
+import reactive from 'vue'
+import ref from 'vue'
+import Router from 'vue-router'
+import axios from 'axios'
+
 export default {
-  name: 'register'
+  name: 'register',
+   setup() {
+
+            //inisialisasi vue router on Composition API
+            const router = Router()
+
+            //state user
+            const user = reactive({
+                name: '',
+                email: '',
+                password: '',
+                password_confirmation: ''
+            })
+
+            //state validation
+            const validation = ref([])
+
+            //method register
+            function register() {
+
+                //define variable 
+                let name = user.name
+                let email = user.email
+                let password = user.password
+                let password_confirmation = user.password_confirmation
+
+                //send server with axios
+                axios.post('http://localhost:8000/api/register', {
+                        name,
+                        email,
+                        password,
+                        password_confirmation
+                })
+                .then(() => {
+
+                    //redirect ke halaman login
+                    return router.push({
+                        name: 'login'
+                    })
+
+                }).catch(error => {
+                    //set validation dari error response
+                    validation.value = error.response.data
+                })
+
+            }
+
+            return {
+                user, // <-- state user
+                validation, // <-- state validation 
+                register // <-- method register
+            }
+
+        }
 }
 </script>
