@@ -4,14 +4,17 @@ import DashboardLayout from "@/layout/DashboardLayout";
 import AuthLayout from "@/layout/AuthLayout";
 
 import Dashboard from "../views/Dashboard.vue";
-import Icons from "../views/Icons.vue";
-import Maps from "../views/Maps.vue";
 import Profile from "../views/UserProfile.vue";
 import Tables from "../views/Tables.vue";
 import error from "../views/Error.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import katalog from "../views/Katalog/Katalog.vue";
+import Produktax from '@/views/Katalog/Produk_tax/Produktax'
+import AddPtax from '@/views/Katalog/Produk_tax/AddPtax'
+import Produk from '@/views/Katalog/Produk/Produk'
+import KategoriProduk from '@/views/Katalog/Kategori/KategoriProduk'
+import GrupList from '@/views/Katalog/Grup/GrupList'
 
 const routes = [
   {
@@ -30,9 +33,19 @@ const routes = [
         components: { default: katalog },
       },
       {
-        path: "/icons",
-        name: "icons",
-        components: { default: Icons },
+        path: "/produktax",
+        name: "produktax",
+        components: { default: Produktax},
+      },
+      {
+        path: "/addptax",
+        name: "addptax",
+        components: { default: AddPtax },
+      },
+      {
+        path: "/produk",
+        name: "produk",
+        components: { default: Produk },
       },
       {
         path: "/error",
@@ -40,9 +53,9 @@ const routes = [
         components: { default: error },
       },
       {
-        path: "/maps",
-        name: "maps",
-        components: { default: Maps },
+        path: "/kategoriproduk",
+        name: "kategoriproduk",
+        components: { default: KategoriProduk },
       },
       {
         path: "/profile",
@@ -50,9 +63,9 @@ const routes = [
         components: { default: Profile },
       },
       {
-        path: "/tables",
-        name: "tables",
-        components: { default: Tables },
+        path: "/grup",
+        name: "grup",
+        components: { default: GrupList },
       },
     ],
   },

@@ -157,6 +157,7 @@ import SocialTrafficTable from "./Dashboard/SocialTrafficTable";
 let chart;
 
 export default {
+  name: 'dashboard',
   components: {
     PageVisitsTable,
     SocialTrafficTable,

@@ -105,7 +105,7 @@ import { useRouter } from 'vue-router'
                         })
                     }
                     else{
-                        loginFailed.value = true
+                        loginFailed.value = response.data
                     }
 
                     //set state loggedIn to true
