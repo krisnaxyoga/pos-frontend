@@ -151,7 +151,9 @@
 // Charts
 import { ordersChart } from "@/components/Charts/Chart";
 import Chart from "chart.js";
-
+import { onMounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
+import axios from 'axios'
 import PageVisitsTable from "./Dashboard/PageVisitsTable";
 import SocialTrafficTable from "./Dashboard/SocialTrafficTable";
 let chart;
@@ -162,6 +164,74 @@ export default {
     PageVisitsTable,
     SocialTrafficTable,
   },
+  setup(){
+     //state token
+            const token = localStorage.getItem('token')
+
+            //inisialisasi vue router on Composition API
+            const router = useRouter()
+
+            //state user
+            const user = ref('')
+            
+            //mounted properti
+            onMounted(() =>{
+
+                //check Token exist
+                if(!token) {
+                    return router.push({
+                        name: 'login'
+                    })
+                }
+                
+                //get data user
+                axios.defaults.headers.common.Authorization = `Bearer ${token}`
+                axios.get('http://localhost:8000/api/user')
+                .then(response => {
+
+                    //console.log(response.data.name)
+                    user.value = response.data
+
+                })
+                .catch(error => {
+                    console.log(error.response.data)
+                })
+
+            })
+
+            //method logout
+            function logout() {
+
+                //logout
+                axios.defaults.headers.common.Authorization = `Bearer ${token}`
+                axios.post('http://localhost:8000/api/logout')
+                .then(response => {
+
+                    if(response.data.success) {
+
+                        //remove localStorage
+                        localStorage.removeItem('token')
+
+                        //redirect ke halaman login
+                        return router.push({
+                            name: 'login'
+                        })
+
+                    }
+
+                })
+                .catch(error => {
+                    console.log(error.response.data)
+                })
+
+            }
+
+            return {
+                token,      // <-- state token
+                user,       // <-- state user
+                logout      // <-- method logout
+            }
+          },
   data() {
     return {
       salesChartID: "salesChart",
