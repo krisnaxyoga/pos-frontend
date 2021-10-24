@@ -7,7 +7,7 @@
       <div class="row align-items-center">
         <div class="col">
           <h3 class="mb-0" :class="type === 'dark' ? 'text-white' : ''">
-            List Produk
+            List Kategori
           </h3>
         </div>
         <div class="col text-right">
@@ -25,12 +25,16 @@
         :data="tableData"
       >
         <template v-slot:columns>
-          <th>Nama</th>
-          <th>Status Tampil</th>
-          <th>Status Produk</th>
-          <th>Created At</th>
-          <th>Update At</th>
-          <th>Aksi</th>
+            <th>Nama</th>
+            <th>Sku</th>
+            <th>Aksi</th>
+            <th>harga jual</th>
+            <th>dibuat pada</th> 
+            <th> diupdate pada</th>
+            <th>stock</th>
+            <th>kosong</th>
+            <th>notifikasi peringatan stok</th>
+            <th>aksi</th>
         </template>
 
         <template>
@@ -50,7 +54,7 @@
 </template>
 <script>
 export default {
-  name: "produk-table",
+  name: "varian-table",
   props: {
     type: {
       type: String,

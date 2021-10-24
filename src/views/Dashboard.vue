@@ -186,7 +186,7 @@ export default {
                 
                 //get data user
                 axios.defaults.headers.common.Authorization = `Bearer ${token}`
-                axios.get('http://localhost:8000/api/user')
+                axios.get('https://api.stargobali.com/api/login')
                 .then(response => {
 
                     //console.log(response.data.name)
@@ -204,7 +204,7 @@ export default {
 
                 //logout
                 axios.defaults.headers.common.Authorization = `Bearer ${token}`
-                axios.post('http://localhost:8000/api/logout')
+                axios.post('https://api.stargobali.com/api/logout')
                 .then(response => {
 
                     if(response.data.success) {

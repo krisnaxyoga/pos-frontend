@@ -4,6 +4,9 @@
        <div class="container mt-5">
             <div class="row">
                 <div class="col">
+                    <router-link to="/addproduk" class="btn btn-success mb-3">
+                        Tambah
+                    </router-link>
                     <produk-table title="Light Table"></produk-table>
                 </div>
             </div>

@@ -9,7 +9,7 @@
         <span class="navbar-toggler-icon"></span>
       </navbar-toggle-button>
       <router-link class="navbar-brand" to="/">
-        <img :src="logo" class="navbar-brand-img" alt="..." />
+        <img src="https://pbs.twimg.com/profile_images/1063925348205821958/DlGcxdOl.jpg" class="navbar-brand-img" alt="..." />
       </router-link>
 
       <slot name="mobile-right">
