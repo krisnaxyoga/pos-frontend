@@ -10,9 +10,6 @@
                             <router-link to="/produk" class="btn btn-secondary">Produk</router-link>
                         </td>
                         <td>
-                            <router-link to="/produktax" class="btn btn-secondary">Tax</router-link>
-                        </td>
-                        <td>
                             <router-link to="/varianlist" class="btn btn-secondary">Varian</router-link>
                         </td>
                         <td>

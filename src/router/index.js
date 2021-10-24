@@ -12,6 +12,7 @@ import Register from "../views/Register.vue";
 import katalog from "../views/Katalog/Katalog.vue";
 import Produktax from '@/views/Katalog/Produk_tax/Produktax'
 import AddPtax from '@/views/Katalog/Produk_tax/AddPtax'
+import EditPtax from '@/views/Katalog/Produk_tax/EditPtax'
 import Produk from '@/views/Katalog/Produk/Produk'
 import KategoriProduk from '@/views/Katalog/Kategori/KategoriProduk'
 import GrupList from '@/views/Katalog/Grup/GrupList'
@@ -23,7 +24,7 @@ import EditKatP from '@/views/Katalog/Kategori/EditKatP'
 import VarianList from '@/views/Katalog/Varian_Produk/VarianList'
 import Addvarian from '@/views/Katalog/Varian_Produk/Addvarian'
 import VarianEdit from '@/views/Katalog/Varian_Produk/VarianEdit'
-
+import DetailP from '@/views/Katalog/Produk/DetailP'
 
 const routes = [
   {
@@ -87,6 +88,11 @@ const routes = [
         name: "produk",
         components: { default: Produk },
       },
+      {
+        path: "/detailproduk",
+        name: "Detail produk",
+        components: { default: DetailP },
+      },
       { 
         path: "/editproduk",
         name: "editproduk",
@@ -120,6 +126,11 @@ const routes = [
         path: "/addptax",
         name: "addptax",
         components: { default: AddPtax },
+      },
+      {
+        path: "/editptax",
+        name: "Edit Produk tax",
+        components: { default: EditPtax },
       },
       {
         path: "/error",

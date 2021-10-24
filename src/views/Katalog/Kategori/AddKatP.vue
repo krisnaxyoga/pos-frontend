@@ -1,12 +1,9 @@
 <template>
 <head-menu></head-menu>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-12 col-lg-12">
-                <div class="col-12 col-lg-12 d-flex justify-content-end">
-                    <router-link class=" btn btn-primary mb-3" to="/product/listproduct">BACK</router-link>
-                </div>
-                <div class="card">
+            <div class="col-12 col-lg-12 ">
+                <div class="card ">
                     <div class="card-header">
                         Add Kategori
                     </div>
@@ -31,6 +28,7 @@
                                 >submit</button>
                             </div>
                         </form>
+                        <router-link to="/kategoriproduk" class="text-primary"> <i class="fa fa-reply"></i> Back List</router-link>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12 col-lg-12">
                 
-                <div class="card">
+                <div class="card mt-5">
                     <div class="card-header">
                         Add Kategori
                     </div>
@@ -29,6 +29,7 @@
                                 >submit</button>
                             </div>
                         </form>
+                        <router-link to="/kategoriproduk" class="text-primary"> <i class="fa fa-reply"></i> Back List</router-link>
                     </div>
                 </div>
             </div>
