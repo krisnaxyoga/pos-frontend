@@ -6,7 +6,9 @@
           <div class="text-center text-muted mb-4">
             <h1>Daftarkan Tokomu Disini</h1>
           </div>
-          <form role="form" class="col-12 col-lg-12" @submit.prevent="register">
+          <div v-if="loading">LOADING...</div>
+          <div v-if="!loading">
+             <form role="form" class="col-12 col-lg-12" @submit.prevent="register">
             <div class="row">
               <div class="col-12 col-lg-12">
                 <!-- <div class="form-group">
@@ -130,6 +132,7 @@
               >
             </div>
           </form>
+          </div>
         </div>
       </div>
       <div class="row mt-3">
@@ -159,7 +162,7 @@
 
             //inisialisasi vue router on Composition API
             const router = useRouter()
-
+            const loading = ref(false);
             //state user
             const model = reactive({
                 shop_name: '',
@@ -181,8 +184,10 @@
               axios.get('https://api.stargobali.com/api/shop_category/all')
                   .then((result)=>{
                       category.value=result.data
+                      loading.value = false;
                   }).catch((err)=>{
                       console.log(err.response)
+                      loading.value = false;
                   });
               });
 
@@ -210,6 +215,7 @@
 
             return {
                 category,
+                loading,
                 model, // <-- state user
                 validation, // <-- state validation 
                 register // <-- method register

@@ -34,6 +34,7 @@
             path: '/error',
           }"
         />
+        
         <sidebar-item
           :link="{
             name: 'Pembelian',
