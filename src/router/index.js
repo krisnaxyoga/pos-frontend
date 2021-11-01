@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-import nProgress from "nprogress";
+import NProgress from "nprogress";
 import DashboardLayout from "@/layout/DashboardLayout";
 import AuthLayout from "@/layout/AuthLayout";
 import Dashboard from "../views/Dashboard.vue";
@@ -32,6 +32,15 @@ import StokKeluar from '@/views/Katalog/Inventory/StokKeluar/StokKeluar'
 import ProduksiStok from '@/views/Katalog/Inventory/ProduksiStok/ProduksiStok'
 import PergerakanStok from '@/views/Katalog/Inventory/PergerakanStok/PergerakanStok'
 import OpnameStok from '@/views/Katalog/Inventory/OpnameStok/OpnameStok'
+import PenjualanIndex from '@/views/Penjualan/PenjualanIndex'
+import ButuhDiproses from '@/views/Penjualan/ButuhProses/ButuhDiproses'
+import Dibatalkan from '@/views/Penjualan/Dibatalkan/Dibatalkan'
+import Pengembalian from '@/views/Penjualan/Pengembalian/Pengembalian'
+import PesananSelesai from '@/views/Penjualan/PesananSelesai/PesananSelesai'
+import Pembelianindex from '@/views/Pembelian/Pembelianindex'
+import ButuhProsesPembelian from '@/views/Pembelian/ButuhProses/ButuhProsesPembelian'
+import DibatalkanPembelian from '@/views/Pembelian/Dibatalkan/DibatalkanPembelian'
+import TelahDiprosespembelian from '@/views/Pembelian/TelahDiproses/TelahDiprosespembelian'
 
 const routes = [
   {
@@ -186,6 +195,69 @@ const routes = [
         name: "Edit Produk tax",
         components: { default: EditPtax },
       },
+      //Penjualan
+      {
+        path: "/penjualan",
+        name: "Penjualan",
+        components: { default: PenjualanIndex},
+      },
+      //butuh diproses
+      {
+        path: "/butuhdiproses",
+        name: "Butuh Diproses",
+        components: { default: ButuhDiproses},
+      },
+      //butuh diproses
+      //dibatalkan
+      {
+        path: "/dibatalkan",
+        name: "Dibatalkan",
+        components: { default: Dibatalkan},
+      },
+      //dibatalkan
+      //Pengembalian
+      {
+        path: "/pengembalian",
+        name: "Pengembalian",
+        components: { default: Pengembalian},
+      },
+      //pengembalian
+      //pesanan selesai
+      {
+        path: "/pesananselesai",
+        name: "Pesanan selesai",
+        components: { default: PesananSelesai},
+      },
+      //pesanan selesai
+      //penjualan
+      //pembelian
+      {
+        path: "/pembelian",
+        name: "pembelian",
+        components: { default: Pembelianindex},
+      },
+      //Butuh Proses pembelian
+      {
+        path: "/butuhprosespembelian",
+        name: "Butuh Proses pembelian",
+        components: { default: ButuhProsesPembelian},
+      },
+      //butuh proses pembelian
+      //Dibatalkan Pembelian
+      {
+        path: "/Dibatalkanpembelian",
+        name: "Dibatalkan pembelian",
+        components: { default: DibatalkanPembelian},
+      },
+      //Dibatalkan Pembelian
+      //Telah Diproses
+      {
+        path: "/telahprosespembelian",
+        name: "Telah Proses pembelian",
+        components: { default: TelahDiprosespembelian},
+      },
+      //Telah Diproses
+      //pembelian
       {
         path: "/error",
         name: "error",
@@ -222,6 +294,14 @@ const router = createRouter({
   history: createWebHashHistory(),
   linkActiveClass: "active",
   routes,
+});
+router.beforeEach((to, from, next) => {
+  NProgress.start()
+  NProgress.set(0.5)
+  next()
+});
+router.afterEach(() => {
+  setTimeout(() => NProgress.done(), 20)
 });
 
 export default router;

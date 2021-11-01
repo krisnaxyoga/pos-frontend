@@ -31,7 +31,7 @@
           :link="{
             name: 'Penjualan',
             icon: 'fa fa-truck text-yellow',
-            path: '/error',
+            path: '/penjualan',
           }"
         />
         
@@ -39,7 +39,7 @@
           :link="{
             name: 'Pembelian',
             icon: 'ni ni-cart text-red',
-            path: '/error',
+            path: '/pembelian',
           }"
         />
         <sidebar-item
