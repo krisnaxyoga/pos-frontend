@@ -7,8 +7,7 @@
                     <router-link to="/addstockmasuk" class="btn btn-success mb-3">
                         Tambah
                     </router-link>
-                    <produksi-stok-tabel></produksi-stok-tabel>
-                    
+                    <stock-masuk title="Light Table"></stock-masuk>
                 </div>
             </div>
         </div>
@@ -16,10 +15,10 @@
 </template>
 <script>
 import HeadMenu from '../../HeadMenu.vue'
-import ProduksiStokTabel from '../../../Tables/Inventory/ProduksiStokTabel.vue'
+import StockMasuk from '../../../Tables/Inventory/StockMasuk.vue'
 export default {
-    components: { HeadMenu, ProduksiStokTabel},
-    name: 'ProduksiStok',
+    components: { HeadMenu,StockMasuk},
+    name: 'StockMasukList',
 
 }
 </script>

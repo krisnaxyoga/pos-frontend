@@ -25,12 +25,12 @@
                     </base-button>
                     </template>
                     <div class="scroll col-12">
-                        <router-link to="/error" class="dropdown-item">Stok Masuk</router-link>
-                        <router-link to="/error" class="dropdown-item">Stok Keluar</router-link>
-                        <router-link to="/error" class="dropdown-item">Produksi Stok</router-link>
-                        <router-link to="/error" class="dropdown-item">Opname Stock</router-link>
-                        <router-link to="/error" class="dropdown-item">Pergerakan Stock</router-link>
-                            <router-link to="/error" class="dropdown-item">Email Peringatan Stock</router-link>
+                        <router-link to="/stockmasuklist" class="dropdown-item">Stok Masuk</router-link>
+                        <router-link to="/stockkeluar" class="dropdown-item">Stok Keluar</router-link>
+                        <router-link to="/produksistock" class="dropdown-item">Produksi Stok</router-link>
+                        <router-link to="/opnamestock" class="dropdown-item">Opname Stock</router-link>
+                        <router-link to="/pergerakanstock" class="dropdown-item">Pergerakan Stock</router-link>
+                           
                     </div>
                 </base-dropdown>
             </div>  

@@ -25,6 +25,13 @@ import VarianList from '@/views/Katalog/Varian_Produk/VarianList'
 import Addvarian from '@/views/Katalog/Varian_Produk/Addvarian'
 import VarianEdit from '@/views/Katalog/Varian_Produk/VarianEdit'
 import DetailP from '@/views/Katalog/Produk/DetailP'
+import StockMasukList from '@/views/Katalog/Inventory/Stokmasuk/StockMasukList'
+import EditStokMasuk from '@/views/Katalog/Inventory/Stokmasuk/EditStokMasuk'
+import AddStokMasuk from '@/views/Katalog/Inventory/Stokmasuk/AddStokMasuk'
+import StokKeluar from '@/views/Katalog/Inventory/StokKeluar/StokKeluar'
+import ProduksiStok from '@/views/Katalog/Inventory/ProduksiStok/ProduksiStok'
+import PergerakanStok from '@/views/Katalog/Inventory/PergerakanStok/PergerakanStok'
+import OpnameStok from '@/views/Katalog/Inventory/OpnameStok/OpnameStok'
 
 const routes = [
   {
@@ -43,6 +50,53 @@ const routes = [
         name: "katalog",
         components: { default: katalog },
       },
+      //inventory
+      //stockmasuk
+      {
+        path: "/stockmasuklist",  
+        name: "stok masuk",
+        components: { default: StockMasukList },
+      },
+      {
+        path: "/editstockmasuk",  
+        name: "edit stok masuk",
+        components: { default: EditStokMasuk },
+      },
+      {
+        path: "/addstockmasuk",  
+        name: "add stok masuk",
+        components: { default: AddStokMasuk },
+      },
+      //stockmasuk
+      //stock keluar
+      {
+        path: "/stockkeluar",  
+        name: "Stok Keluar",
+        components: { default: StokKeluar },
+      },
+      //stock keluar
+      //produksi stok
+      {
+        path: "/produksistock",  
+        name: "Produksi Stock",
+        components: { default: ProduksiStok },
+      },
+      //produksi stok
+      //pergerakan stok
+      {
+        path: "/pergerakanstock",
+        name: "Pergerakan Stock",
+        components: { default: PergerakanStok}
+      },
+      //pergerakan stok
+      //opname Stok
+      {
+        path: "/opnamestock",
+        name: "Opname Stock",
+        components: { default: OpnameStok}
+      },
+      //opname stok
+      //inventory
       //group
       {
         path: "/grup",
