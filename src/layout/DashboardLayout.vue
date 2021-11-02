@@ -20,6 +20,13 @@
             path: '/katalog',
           }"
         />
+         <sidebar-item
+          :link="{
+            name: 'Marketing',
+            icon: 'fa fa-rocket text-red',
+            path: '/error',
+          }"
+        />
         <sidebar-item
           :link="{
             name: 'Pelanggan & supplier',
@@ -46,7 +53,7 @@
           :link="{
             name: 'Pendapatan & Pengeluaran',
             icon: 'fa fa-balance-scale text-info',
-            path: '/error',
+            path: '/tipetransaksi',
           }"
         />
         <sidebar-item

@@ -2,7 +2,7 @@
     <div>
         <base-header type="gradient-success" class="pb-1 pt-4 pt-md-7">
         <!-- Card stats -->
-            <div class="mb-5">
+            <div class="mb-5 scroll">
                  <router-link to="/butuhdiproses" class="btn btn-secondary">Butuh Diproses</router-link>
                  <router-link to="/pesananselesai" class="btn btn-secondary">Pesanan Selesai</router-link>
                  <router-link to="/pengembalian" class="btn btn-secondary">Pengembalian</router-link>

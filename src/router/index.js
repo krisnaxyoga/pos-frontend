@@ -41,6 +41,8 @@ import Pembelianindex from '@/views/Pembelian/Pembelianindex'
 import ButuhProsesPembelian from '@/views/Pembelian/ButuhProses/ButuhProsesPembelian'
 import DibatalkanPembelian from '@/views/Pembelian/Dibatalkan/DibatalkanPembelian'
 import TelahDiprosespembelian from '@/views/Pembelian/TelahDiproses/TelahDiprosespembelian'
+import TipeTransaksi from '@/views/PendapatanPengeluaran/TipeTransaksi/TipeTransaksi'
+import Transaksi from '@/views/PendapatanPengeluaran/Transaksi/Transaksi'
 
 const routes = [
   {
@@ -258,6 +260,22 @@ const routes = [
       },
       //Telah Diproses
       //pembelian
+      //Pendapatan Dan Pengeluaran
+      //tipetransaksi
+      {
+        path: "/tipetransaksi",
+        name: "Tipe transaksi",
+        components: { default: TipeTransaksi},
+      },
+      //tipetransaksi
+      //transaksi
+      {
+        path: "/transaksi",
+        name: "Transaksi",
+        components: { default: Transaksi},
+      },
+      //transaksi
+       //Pendapatan Dan Pengeluaran
       {
         path: "/error",
         name: "error",
