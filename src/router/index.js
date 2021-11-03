@@ -39,6 +39,7 @@ import Pengembalian from '@/views/Penjualan/Pengembalian/Pengembalian'
 import PesananSelesai from '@/views/Penjualan/PesananSelesai/PesananSelesai'
 import Pembelianindex from '@/views/Pembelian/Pembelianindex'
 import ButuhProsesPembelian from '@/views/Pembelian/ButuhProses/ButuhProsesPembelian'
+import AddButuhProses from '@/views/Pembelian/ButuhProses/AddButuhProses'
 import DibatalkanPembelian from '@/views/Pembelian/Dibatalkan/DibatalkanPembelian'
 import TelahDiprosespembelian from '@/views/Pembelian/TelahDiproses/TelahDiprosespembelian'
 import TipeTransaksi from '@/views/PendapatanPengeluaran/TipeTransaksi/TipeTransaksi'
@@ -243,6 +244,11 @@ const routes = [
         path: "/butuhprosespembelian",
         name: "Butuh Proses pembelian",
         components: { default: ButuhProsesPembelian},
+      },
+      {
+        path: "/addbutuhproses",
+        name: "Tambah Butuh Proses pembelian",
+        components: { default: AddButuhProses},
       },
       //butuh proses pembelian
       //Dibatalkan Pembelian

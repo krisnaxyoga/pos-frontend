@@ -166,7 +166,7 @@ export default {
   },
   setup(){
      //state token
-            const token = localStorage.getItem('token')
+            const token =  localStorage.setItem("data", response.data['data']['token'])
 
             //inisialisasi vue router on Composition API
             const router = useRouter()
